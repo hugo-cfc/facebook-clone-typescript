@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import LogoFacebook from '../../images/facebookLogin.svg';
+import LogoFacebook from '../../assets/images/facebookLogin.svg';
 
 import {
   Container,

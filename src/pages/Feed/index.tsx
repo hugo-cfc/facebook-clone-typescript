@@ -6,9 +6,9 @@ import {} from './style';
 
 export const Feed: React.FC = () => {
   return (
-    <div>
-      <Header />
-    </div>
+    <>
+      <Header activeTab="home" />
+    </>
   );
 };
 

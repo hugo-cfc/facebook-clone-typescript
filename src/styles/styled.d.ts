@@ -9,9 +9,11 @@ declare module 'styled-components' {
       secundary: string;
 
       background: string;
+      backgroundPopup: string;
       text: string;
       textSecundary: string;
       textTertiary: string;
+      notifications: string;
       // eslint-disable-next-line @typescript-eslint/ban-types
       [key: string]: string | object;
     };

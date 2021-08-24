@@ -13,45 +13,19 @@ export const Container = styled.div`
 
 export const SearchContainer = styled.div`
   height: 100%;
+  width: 320px;
+  margin-right: auto;
+
   display: flex;
   align-items: center;
 
   & > svg {
     margin-right: 10px;
+    cursor: pointer;
   }
 
-  div#input-container {
-    height: 40px;
-    width: 240px;
-    background: ${(props) => props.theme.colors.background};
-    display: flex;
-    align-items: center;
-    border-radius: 50px;
-
-    svg {
-      width: 18px;
-      margin-left: 12px;
-
-      circle,
-      line {
-        stroke: ${(props) => props.theme.colors.textSecundary};
-      }
-    }
-
-    input {
-      background: ${(props) => props.theme.colors.background};
-      border: none;
-      outline: none;
-      height: 40px;
-      padding: 16px 9px;
-      box-sizing: border-box;
-      flex: 1;
-      border-radius: 50px;
-
-      &::placeholder {
-        font-size: 15px;
-      }
-    }
+  input#input-container {
+    width: 210px;
   }
 `;
 
@@ -102,6 +76,21 @@ export const NavLink = styled(LinkRouter)<NavLinkProps>`
 
     transition: background-color 0.2s;
 
+    position: relative;
+
+    span {
+      position: absolute;
+
+      background: ${(props) => props.theme.colors.notifications};
+      color: ${(props) => props.theme.colors.primary};
+
+      padding: 0 5px;
+      border-radius: 16px;
+      font-weight: 500;
+      top: 0;
+      right: 18px;
+    }
+
     ${(props) =>
       !props.active &&
       css`
@@ -130,6 +119,16 @@ export const OptionsContainer = styled.div`
     display: flex;
     align-items: center;
     margin-right: 20px;
+    padding: 3px;
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s;
+
+    &:hover {
+      background: ${shade(0.2, 'rgba(0, 0, 0, 0.01)')};
+    }
 
     img {
       width: 28px;
@@ -141,12 +140,24 @@ export const OptionsContainer = styled.div`
     font-weight: 600;
   }
 
-  div#containet-options-buttons {
+  div#container-options-buttons {
     button {
       width: 40px;
       height: 40px;
       border: 0;
       border-radius: 50%;
+
+      transition: filter 0.2s;
+
+      &:hover {
+        filter: brightness(0.9);
+      }
+
+      svg {
+        path {
+          width: 40px;
+        }
+      }
 
       & + button {
         margin-left: 8px;

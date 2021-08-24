@@ -1,12 +1,17 @@
 import React from 'react';
 
+import Input from '../Input/index';
+
 import { ReactComponent as FacebookIcon } from '../../assets/icons/facebookCircle.svg';
-import { ReactComponent as SearchIcon } from '../../assets/icons/searchicon.svg';
 import { ReactComponent as HomeIcon } from '../../assets/icons/homeIcon.svg';
 import { ReactComponent as VideoIcon } from '../../assets/icons/videosIcon.svg';
 import { ReactComponent as MarketIcon } from '../../assets/icons/marketIcon.svg';
 import { ReactComponent as GroupsIcon } from '../../assets/icons/groupsIcon.svg';
 import { ReactComponent as GamingIcon } from '../../assets/icons/gamingIcon.svg';
+import { ReactComponent as MenuIcon } from '../../assets/icons/menuIcon.svg';
+import { ReactComponent as MessengerIcon } from '../../assets/icons/messengerIcon.svg';
+import { ReactComponent as NotificationIcon } from '../../assets/icons/notificationIcon.svg';
+import { ReactComponent as ArrowIcon } from '../../assets/icons/arrowIcon.svg';
 
 import ProfileImage from '../../assets/images/perfil.png';
 
@@ -17,6 +22,7 @@ import {
   NavLink,
   OptionsContainer,
 } from './style';
+import { Menu } from './Components/Menu';
 
 interface HeaderProps {
   activeTab?: string;
@@ -27,10 +33,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, ...rest }) => {
     <Container {...rest}>
       <SearchContainer>
         <FacebookIcon />
-        <div id="input-container">
-          <SearchIcon />
-          <input placeholder="Pesquisar no Facebook" />
-        </div>
+        <Input id="input-container" placeholder="Pesquisar no Facebook" />
       </SearchContainer>
       <NavContainer>
         <ul>
@@ -45,6 +48,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, ...rest }) => {
             <NavLink to="/" active={activeTab === 'videos'}>
               <div>
                 <VideoIcon />
+                <span>9+</span>
               </div>
             </NavLink>
           </li>
@@ -66,6 +70,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, ...rest }) => {
             <NavLink to="/" active={activeTab === 'gaming'}>
               <div>
                 <GamingIcon />
+                <span>9+</span>
               </div>
             </NavLink>
           </li>
@@ -76,11 +81,20 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, ...rest }) => {
           <img src={ProfileImage} alt="Hugo" />
           Hugo
         </div>
-        <div id="containet-options-buttons">
-          <button>Mn</button>
-          <button>Mg</button>
-          <button>Nt</button>
-          <button>Dd</button>
+        <div id="container-options-buttons">
+          <button>
+            <MenuIcon />
+          </button>
+          <Menu />
+          <button>
+            <MessengerIcon />
+          </button>
+          <button>
+            <NotificationIcon />
+          </button>
+          <button>
+            <ArrowIcon />
+          </button>
         </div>
       </OptionsContainer>
     </Container>
